@@ -65,6 +65,11 @@ main(){
 
   generate_configuration
   configure_timezone
+
+  # Force an initial rotation, because if the container restarts often it might
+  # never get to run.
+  /usr/sbin/logrotate -f /etc/logrotate.conf
+
   run_cron
 }
 
