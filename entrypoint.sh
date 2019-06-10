@@ -68,7 +68,7 @@ main(){
 
   # Force an initial rotation, because if the container restarts often it might
   # never get to run.
-  /usr/sbin/logrotate -f /etc/logrotate.conf
+  /usr/sbin/logrotate -f /etc/logrotate.conf || true
 
   run_cron
 }
